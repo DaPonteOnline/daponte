@@ -1,0 +1,28 @@
+{
+  "upload_type": "software",
+  "title": "Da Ponte Online — A Digital Scholarly Edition (Web Application)",
+  "description": "The published web-app form of the Da Ponte digital scholarly edition of late-17th–18th-century Italian libretti: reading views with facing facsimiles, a three-way intertextual comparator for Il Talismano, a character relationship network, and client-side full-text search. This deposit archives the rendered, static, re-hostable site (HTML/JS/CSS + IIIF facsimiles + Pagefind index). Live site: https://daponte.ficlit.unibo.it",
+  "language": "ita",
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": [
+    "digital scholarly edition",
+    "TEI P5",
+    "Lorenzo da Ponte",
+    "Italian libretti",
+    "eighteenth-century opera",
+    "static site"
+  ],
+  "creators": [
+    {"name": "Borin, Alessandro", "affiliation": "Conservatorio di Castelfranco Veneto"},
+    {"name": "Levchenko, Mariia", "orcid": "0009-0008-2649-0729", "affiliation": "Università di Bologna"},
+    {"name": "Malavasi, Alessandro", "orcid": "0009-0002-4119-4326", "affiliation": "Università di Padova"},
+    {"name": "Pacchin, Marta", "orcid": "0009-0009-1350-6311", "affiliation": "Conservatorio di Castelfranco Veneto · Conservatorio di Trapani"},
+    {"name": "Priore, Roberta", "orcid": "0000-0003-1713-178X", "affiliation": "Università di Bologna"},
+    {"name": "Scarponi, Ilaria", "orcid": "0009-0005-3549-8886", "affiliation": "Conservatorio di Castelfranco Veneto"}
+  ],
+  "related_identifiers": [
+    {"relation": "hasPart", "identifier": "10.5281/zenodo.21082557", "scheme": "doi"},
+    {"relation": "isDerivedFrom", "identifier": "https://github.com/mary-lev/DaPonte", "scheme": "url"}
+  ]
+}
