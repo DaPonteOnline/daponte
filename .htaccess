@@ -5,6 +5,15 @@
 # so every route is <path>/index.html.
 DirectoryIndex index.html
 
+# This docroot is a git clone (deployed via `git pull`). Block web access to the
+# repo's own metadata — without this, the full history would be downloadable at
+# /.git/. Covers .git/, .gitignore, .gitattributes. .htaccess is denied by
+# Apache's default config; DEPLOY.md is harmless docs but blocked here too.
+RedirectMatch 404 /\.git
+<FilesMatch "(^\.ht|^DEPLOY\.md$)">
+  Require all denied
+</FilesMatch>
+
 # Send the bare root straight to the Italian home as a real HTTP 302, so
 # visitors never see the static "Redirecting…" interstitial (dist/index.html).
 # "^/$" matches the exact root ONLY — it cannot loop on /it/ or catch any
