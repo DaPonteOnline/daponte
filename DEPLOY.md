@@ -6,33 +6,29 @@ source repository. To change the site, edit the source and rebuild — never edi
 files here directly; they will be overwritten on the next deploy.
 
 - **Source repo:** `da_ponte` (the Astro project)
-- **Target host:** Unibo DHARC (static web server, Apache assumed)
+- **Target host:** `https://daponte.ficlit.unibo.it` (Unibo DHARC, Apache assumed)
+- **Mount point:** domain **root** of the subdomain (`BASE_PATH=/`)
 - **Runtime required:** none. Pure static files.
 
 ## How this artifact was built
 
 ```bash
 # from the source repo
-SITE_URL="https://YOUR_DHARC_HOST_HERE" BASE_PATH="/" THEME=default npm run build
-# then dist/ was copied here
+SITE_URL="https://daponte.ficlit.unibo.it" BASE_PATH="/" THEME=default npm run build
+# then dist/ was copied here (rsync), preserving .htaccess / DEPLOY.md / .nojekyll
 ```
 
-⚠️ **Placeholders — rebuild before going live on Dharc.**
-This snapshot was built with:
-- `BASE_PATH=/`  → assumes the site is mounted at the **domain root**.
-- `SITE_URL=https://YOUR_DHARC_HOST_HERE` → only affects absolute URLs in
-  `<link rel="canonical">`, Open Graph tags, and the sitemap.
-
-If Dharc serves the site at a **sub-folder** (e.g. `https://dharc.unibo.it/daponte/`),
-you **must** rebuild — the base path is baked into every internal link at build
-time and cannot be patched afterward:
+Because the site lives on its own subdomain, it is mounted at the root, so
+`BASE_PATH=/` is correct and every internal link is root-relative. If the mount
+point ever changes to a **sub-folder** (e.g. `…/daponte/`), you **must** rebuild
+— the base path is baked into every internal link at build time and cannot be
+patched afterward:
 
 ```bash
-SITE_URL="https://dharc.unibo.it" BASE_PATH="/daponte" THEME=default npm run build
+SITE_URL="https://daponte.ficlit.unibo.it" BASE_PATH="/daponte" THEME=default npm run build
 ```
 
-Then resync `dist/` into this repo and update the `ErrorDocument` line in
-`.htaccess` to `/daponte/404.html`.
+…and then update the `ErrorDocument` line in `.htaccess` to `/daponte/404.html`.
 
 ## Server requirements (Apache — see `.htaccess`)
 
