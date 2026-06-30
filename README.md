@@ -1,6 +1,6 @@
 # Da Ponte Online — A Digital Scholarly Edition (Web Application)
 
-<!-- DOI badge added after the first Zenodo release -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21083489.svg)](https://doi.org/10.5281/zenodo.21083489)
 
 The published web-app form of the **Da Ponte** digital scholarly edition of
 late-17th–18th-century Italian libretti: libretto reading views with facing
@@ -23,8 +23,11 @@ Pagefind, etc.) retain their own licenses.
 
 ## How to cite
 
-See [`CITATION.cff`](CITATION.cff). A DOI is minted by Zenodo on the first
-release; the badge will be added here once it exists.
+See [`CITATION.cff`](CITATION.cff). Cite the **version** you consulted, and the
+**concept DOI** (all versions) in the bibliography:
+
+- **Concept DOI (all versions):** [10.5281/zenodo.21083489](https://doi.org/10.5281/zenodo.21083489)
+- **This version (v0.1.1):** [10.5281/zenodo.21083641](https://doi.org/10.5281/zenodo.21083641)
 
 ## Related deposits & source
 

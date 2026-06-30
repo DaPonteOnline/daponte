@@ -1,6 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this edition, please cite it as below."
 type: software
+doi: 10.5281/zenodo.21083489
 title: "Da Ponte Online — A Digital Scholarly Edition (Web Application)"
 abstract: >-
   The published web-app form of the Da Ponte digital scholarly edition of
