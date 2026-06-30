@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en" data-base class="no-js"> <head><script>
+    document.documentElement.classList.replace("no-js", "js");
+  </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Documentazione — Da Ponte Libretti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/index.DIQQLEpp.css">
+<link rel="stylesheet" href="/_astro/_id_.Dh-_lvF0.css"></head> <body> <header class="site-header" role="banner"> <div class="site-header__inner"> <a href="/en/" class="site-header__brand"> <strong>Da Ponte</strong> Libretti
+</a> <nav class="site-header__nav" aria-label="Main navigation"> <a href="/en/corpus"> Corpus </a><a href="/en/compare"> Compare </a><a href="/en/visualize/network"> Visualize </a><a href="/en/progetto"> Project </a><a href="/en/docs" aria-current="page"> Documentation </a> </nav> <div class="site-header__util"> <span class="lang-toggle"> <a href="#" class data-lang="it">IT</a> <span class="sep">|</span> <a href="#" class="active" data-lang="en">EN</a> </span> <button class="search-trigger" id="search-trigger" aria-label="Search">⌕</button> <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button> </div> </div> <div class="search-overlay" id="search-overlay"> <div class="search-overlay__inner"> <input type="search" placeholder="Search…" id="search-input" autocomplete="off"> <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--color-muted);">
+Premi <code>⏎</code> per aprire <code>/en/search</code> </span> <button style="background: none; border: none; font-size: 1.3rem; color: var(--color-muted); cursor: pointer;" id="search-close" aria-label="Close">×</button> </div> </div> </header> <aside class="mobile-drawer" id="mobile-drawer" aria-label="Navigazione mobile"> <button class="mobile-drawer__close" id="drawer-close" aria-label="Close">×</button> <nav> <a href="/en/corpus"> Corpus </a><a href="/en/compare"> Compare </a><a href="/en/visualize/network"> Visualize </a><a href="/en/progetto"> Project </a><a href="/en/docs" aria-current="page"> Documentation </a> </nav> </aside> <script type="module">const c=document.querySelector(".site-header"),i=document.getElementById("search-trigger"),l=document.getElementById("search-close"),o=document.getElementById("search-input"),a=document.getElementById("hamburger"),m=document.getElementById("drawer-close"),d=document.getElementById("mobile-drawer");i?.addEventListener("click",e=>{e.stopPropagation(),c?.classList.toggle("search-open"),c?.classList.contains("search-open")&&setTimeout(()=>o?.focus(),50)});l?.addEventListener("click",()=>c?.classList.remove("search-open"));o?.addEventListener("keydown",e=>{if(e.key==="Enter"&&o){const s=document.documentElement.lang||"it",t=window.location.pathname.match(/^(.*?)\/(it|en)\//),n=t?t[1]:"";window.location.href=`${n}/${s}/search?q=${encodeURIComponent(o.value)}`}});a?.addEventListener("click",()=>document.body.classList.add("drawer-open"));m?.addEventListener("click",()=>document.body.classList.remove("drawer-open"));document.addEventListener("click",e=>{document.body.classList.contains("drawer-open")&&d&&a&&!d.contains(e.target)&&!a.contains(e.target)&&document.body.classList.remove("drawer-open")});document.addEventListener("keydown",e=>{e.key==="Escape"&&(c?.classList.remove("search-open"),document.body.classList.remove("drawer-open"))});document.querySelectorAll(".lang-toggle a").forEach(e=>{e.addEventListener("click",s=>{s.preventDefault();const t=e.dataset.lang;if(!t)return;const n=window.location.pathname,r=n.replace(/\/(it|en)\//,`/${t}/`);r!==n&&(window.location.href=r)})});</script>  <main class="prose-page" role="main"> <header class="prose-header"> <h1 class="prose-header__title">Documentazione</h1> <p class="prose-header__subtitle">
+Come è codificato il corpus, come si leggono le edizioni, come
+        contribuire. Lo stato di salute della validazione TEI è
+        riportato a parte: <a href="/en/docs/health/">Salute del corpus →</a>.
+</p> </header> <nav class="prose-toc" aria-label="Indice della pagina"> <p class="prose-toc__heading">In questa pagina</p> <ul> <li><a href="#encoding" data-toc-target="encoding">Modello di codifica</a></li><li><a href="#reading-views" data-toc-target="reading-views">Come leggere le edizioni</a></li><li><a href="#contributing" data-toc-target="contributing">Contribuire</a></li><li><a href="#changelog" data-toc-target="changelog">Changelog</a></li> </ul> </nav> <div class="prose-body"> <section id="encoding" class="prose-section"> <h2>Modello di codifica<a class="section-anchor" href="#encoding" aria-label="Permalink">¶</a></h2> <p>
+Le edizioni sono codificate in <strong>TEI P5</strong> con uno
+          schema personalizzato dichiarato in <code>schemas/libretto.odd</code>.
+          Lo schema impone una struttura in <code>&lt;div type="act"&gt;</code> →
+<code>&lt;div type="scene"&gt;</code> e tre tipologie di unità
+          all'interno di ogni scena: <code>&lt;sp&gt;</code> (battute), <code>&lt;stage&gt;</code>
+(didascalie), <code>&lt;lg&gt;</code> (gruppi di versi).
+</p> <h3>Elementi obbligatori</h3> <dl> <dt>&lt;teiHeader&gt;</dt> <dd>Titolo, autore, data, luogo, editore, codificatore (<code>&lt;respStmt&gt;</code>) e licenza.</dd> <dt>&lt;sourceDesc&gt; / &lt;witness&gt;</dt> <dd>Almeno un testimone con segnatura della biblioteca depositaria.</dd> <dt>&lt;listPerson&gt;</dt> <dd>I personaggi del dramma con id stabili (referenziabili da <code>@who</code> sulle battute).</dd> <dt>&lt;castList&gt;</dt> <dd>I personaggi nella forma in cui appaiono sulla pagina, con descrizione e (dove disponibile) interprete (<code>&lt;actor&gt;</code>).</dd> <dt>&lt;facsimile&gt;</dt> <dd>Solo per le edizioni con scansioni: una superficie per pagina con <code>@xml:id="page_NNNN"</code>.</dd> </dl> <h3>Elementi opzionali</h3> <p>
+Quando presenti, vengono estratti e renderizzati: <code>&lt;metDecl&gt;</code>
+(sistema metrico dichiarato), <code>&lt;personGrp&gt;</code> (cori
+          e gruppi), <code>&lt;listPlace&gt;</code>, <code>&lt;listRelation&gt;</code>,
+<code>&lt;set&gt;</code> (ambientazione globale), <code>&lt;titlePage&gt;</code>
+(frontespizio), e i paragrafi della dedica nell'<code>&lt;front&gt;</code>.
+</p> <h3>Convenzioni del corpus</h3> <p>
+Le tre edizioni curate dagli encoder (Cinna, Il ricco d'un giorno,
+          Talismano) condividono un modello di codifica comune. La descrizione
+          che segue riassume le scelte adottate; ciascun TEI sorgente le
+          implementa in modo coerente.
+</p> <h4>Tipologia di edizione</h4> <p>
+Edizioni <strong>critiche</strong>: il testo è il risultato di un
+          processo ecdotico, non una mera trascrizione. Non si rappresenta la
+          topografia della pagina (s lunghe, abbreviazioni, layout originale);
+          la correzione di errori meccanici manifesti è silenziosa e i criteri
+          editoriali sono dichiarati nel <code>&lt;teiHeader&gt;</code> sotto
+<code>&lt;editorialDecl&gt;/&lt;correction&gt;</code>.
+</p> <h4>Gerarchia strutturale</h4> <pre><code>&lt;div1 @type="act"&gt;
+└── &lt;div2 @type="scene"&gt;
+    ├── &lt;head&gt;
+    ├── &lt;stage @type="mixed"&gt;
+    └── &lt;div3 @type="recitative|aria|chorus|ensemble"&gt;</code></pre> <p>
+I sottotipi ammessi per <code>&lt;div3 @type="ensemble"&gt;</code>
+includono <code>duet</code>, <code>trio</code>, <code>quartet</code>,
+<code>finale</code>.
+</p> <h4>Battute (<code>&lt;sp&gt;</code>)</h4> <pre><code>&lt;sp @who="#character"&gt;
+  &lt;speaker&gt;Name&lt;/speaker&gt;
+  &lt;l&gt; … &lt;/l&gt;
+&lt;/sp&gt;</code></pre> <p>Quando una battuta è pronunciata simultaneamente da più
+          personaggi, <code>@who</code> elenca tutti gli xml:id separati da
+          spazio (es. <code>@who="#cinna #servilia"</code>); nello
+<code>&lt;speaker&gt;</code> i nomi compaiono in tondo, separati
+          da virgola.
+</p> <h4>Versi (<code>&lt;l&gt;</code>) — attributi</h4> <dl> <dt><code>@met</code></dt> <dd>Forma metrica del verso: numero arabo seguito da
+<code>p</code> (piano), <code>t</code> (tronco) o <code>s</code>
+(sdrucciolo). Es.: <code>7p</code>, <code>11t</code>,
+<code>8s</code>. Si può usare il numero senza suffisso quando
+            si vuole indicare il tipo metrico generico (utile in
+            combinazione con <code>@real</code>).</dd> <dt><code>@real</code></dt> <dd>Misura reale del verso quando differisce da quella nominale
+            (versi ipermetri o ipometri).</dd> <dt><code>@part</code></dt> <dd>Verso spezzato fra più battute: <code>I</code> (initial),
+<code>M</code> (medial), <code>F</code> (final). Le porzioni
+<code>M</code> e <code>F</code> non incrementano la numerazione
+            del verso (la portano le porzioni <code>I</code>).</dd> </dl> <h4>Rima e gruppi di versi</h4> <ul> <li><code>@rhyme</code> sul blocco aria/coro:
+<code>&lt;div3 @type="aria" @rhyme="ABBC-DEDE-FGHC"&gt;</code></li> <li>Rima inline: <code>&lt;rhyme @label="A"&gt;parola_finale&lt;/rhyme&gt;</code></li> <li>Strofe: <code>&lt;lg&gt;</code></li> </ul> <h4>Didascalie (<code>&lt;stage&gt;</code>)</h4> <p>Tre posizioni:</p> <ol> <li><strong>Inline al verso</strong> quando si riferiscono a
+            quel verso:
+<code>&lt;l&gt;… &lt;stage @type="delivery"&gt;…&lt;/stage&gt;&lt;/l&gt;</code></li> <li><strong>Fra le battute</strong> quando descrivono la
+            progressione generale dell'azione:
+<code>&lt;stage @type="mixed"&gt;…&lt;/stage&gt;</code></li> <li><strong>Uscite di scena</strong>, dentro <code>&lt;sp&gt;</code> ma
+            fuori dal verso:
+<code>&lt;stage @who="#x" @type="exit"&gt;Parte.&lt;/stage&gt;</code></li> </ol> <h4>Simultaneità di battuta</h4> <p>
+Quando due o più personaggi pronunciano simultaneamente versi
+          parzialmente o totalmente differenti, si usa <code>@synch</code>
+sul verso: il verso "spina" porta un <code>xml:id</code> (es.
+<code>v14a</code>) e il verso simultaneo lo riferisce
+          (<code>@synch="#v14a"</code>). I versi corrispondenti si
+          differenziano nella numerazione con una lettera minuscola
+          (<code>@n="14a"</code>, <code>@n="14b"</code>).
+</p> <p>
+Le porzioni <code>M</code>/<code>F</code> dei versi spezzati e i
+          versi marcati con <code>@synch</code> non incrementano la
+          numerazione progressiva.
+</p> <h4>Raggruppamenti di versi (<code>&lt;spGrp&gt;</code>)</h4> <p>
+Indicazioni come "a 2", "a 3", "a 4" presenti nelle stampe sono
+          codificate con <code>&lt;spGrp @type="a_2"&gt;</code>,
+<code>"a_3"</code>, ecc. <strong>Non implicano</strong> di per
+          sé simultaneità di pronuncia: questa è espressa separatamente
+          tramite <code>@synch</code> sul verso.
+</p> <h4>Convenzioni <code>xml:id</code></h4> <ul> <li><strong>Testimoni</strong>: prime due lettere del luogo +
+            anno. Es. Vienna 1788 → <code>VI88</code>; London 1798 →
+<code>LO98</code>.</li> <li><strong>Personaggi</strong>: nome in tondo, lettere
+            minuscole (es. Perillo → <code>perillo</code>).</li> <li><strong>Versi</strong>: <code>v</code> + numero +
+<code>i</code>/<code>m</code>/<code>f</code> (se presente) + un
+            progressivo numerico in arabo preceduto da <code>.</code> se
+            più ancore ricorrono in uno stesso verso.</li> </ul> <h4>Descrizione bibliografica dei testimoni</h4> <p>
+Per i testimoni a stampa si adotta <code>&lt;biblFull&gt;</code>
+all'interno di <code>&lt;sourceDesc&gt;/&lt;listWit&gt;/&lt;witness&gt;</code>:
+          è la struttura più adatta a una descrizione bibliografica
+          completa di una stampa secentesca o settecentesca.
+</p> <h4>Una deviazione TEI: <code>&lt;move @onStage&gt;</code></h4> <p>
+In <em>Il ricco d'un giorno</em> l'attributo <code>@onStage</code>
+su <code>&lt;move&gt;</code> non indica un'azione che ha luogo
+          sulla scena, bensì — in associazione con <code>@who</code> — la
+          presenza di uno o più personaggi sulla scena senza specificarne
+          il momento di entrata (altrimenti espresso, quando possibile,
+          dall'attributo <code>@entrance</code>). Si tratta di un uso
+          locale che si discosta dal default TEI.
+</p> <h3>Annotazioni d'apparato</h3> <p>
+Le edizioni sorgenti <em>non</em> contengono <code>&lt;app&gt;/&lt;lem&gt;/&lt;rdg&gt;</code>:
+          l'apparato è prodotto in standoff dalla pipeline di confronto,
+          separatamente dai testi codificati. Vedere il file
+<code>schemas/libretto.odd</code> per la specifica completa.
+</p> </section> <section id="reading-views" class="prose-section"> <h2>Come leggere le edizioni<a class="section-anchor" href="#reading-views" aria-label="Permalink">¶</a></h2> <p>
+Ogni edizione del corpus si apre in una vista di lettura a
+          colonna singola. Quando l'edizione ha facsimile associato, sulla
+          destra compare un pannello con le scansioni della stampa
+          consultabili in zoom (powered by <a href="https://openseadragon.github.io/">OpenSeadragon</a>).
+</p> <h3>Convenzioni tipografiche</h3> <ul> <li><strong>Endecasillabi</strong> (versi pieni): rientro standard.</li> <li><strong>Settenari</strong> e versi più brevi: rientro maggiore (la cosiddetta <em>scalinata</em>: i versi corti vengono indentati visivamente sotto i lunghi).</li> <li><strong>Battute corali</strong>: speaker label in maiuscoletto, leggermente in corsivo.</li> <li><strong>Arie</strong>: in corsivo, marcate con un'etichetta « — Aria — » iniziale.</li> <li><strong>Didascalie</strong>: in corsivo grigio, centrate o inline a seconda del tipo.</li> <li><strong>Versi spezzati</strong> (sticomitia): le due metà di un endecasillabo pronunciate da personaggi diversi vengono allineate sulla stessa baseline.</li> </ul> <h3>Sincronizzazione testo / facsimile</h3> <p>
+Per le edizioni con scansioni, scorrendo il testo il pannello
+          facsimile cambia automaticamente alla pagina corrispondente
+          (basato sui riferimenti <code>@facs="#page_N"</code> codificati
+          nei <code>&lt;sp&gt;</code> sorgenti). Cliccando una pagina nel
+          selettore, la lettura scorre alla prima battuta di quella pagina.
+          Il pulsante ⇄ flottante in basso a destra disabilita la
+          sincronizzazione per ispezionare pagine indipendenti.
+</p> <h3>Permalink</h3> <p>
+Ogni verso è dotato di un <em>permalink</em> univoco, accessibile
+          cliccando sul glifo che appare sostando sul verso stesso col
+          puntatore. Il permalink restituisce un'ancora del tipo
+<code>#l_a1_s1_001</code> usabile per le citazioni puntuali.
+</p> </section> <section id="contributing" class="prose-section"> <h2>Contribuire<a class="section-anchor" href="#contributing" aria-label="Permalink">¶</a></h2> <p>
+Il corpus accoglie nuove edizioni codificate in TEI P5 conformi
+          alla ODD del progetto. La procedura completa, con convenzioni di
+          denominazione, layout dei file e modalità di fallimento silente
+          comuni, è in <a href="/en/docs/CONTRIBUTING.md"><code>docs/CONTRIBUTING.md</code></a>.
+</p> <h3>Versione breve</h3> <ol> <li>Sistemare il TEI in <code>corpus/&#123;slug&#125;/&#123;filename&#125;.xml</code>; le scansioni in <code>corpus/&#123;slug&#125;/images/page_NNNN.png</code>.</li> <li>Registrarlo in <code>_manifest.yaml</code> sotto <code>editions:</code> + aggiungerne l'id alla lista del testo padre sotto <code>texts:</code>.</li> <li>Eseguire <code>npm run check:manifest</code> per verificare la consistenza.</li> <li>Eseguire <code>npm run build:data</code> (e <code>npm run build:facsimiles</code> se ci sono scansioni).</li> <li>L'edizione comparirà a <code>/&#123;lang&#125;/corpus/&#123;id&#125;</code>.</li> </ol> <h3>Pratiche da evitare</h3> <ul> <li>I file <code>src/data/editions/*.json</code> sono <em>generati</em> ma <em>committati</em> (per visibilità delle diff). Non modificarli a mano.</li> <li>Lo stesso vale per <code>CITATION.cff</code> (rigenerato da <code>scripts/generate_citation.py</code>) e <code>src/data/_manifest.json</code>.</li> <li>Le scansioni in <code>public/iiif/</code> sono in <code>.gitignore</code>: non committarle, vengono prodotte localmente da <code>build:facsimiles</code>.</li> </ul> </section> <section id="changelog" class="prose-section"> <h2>Changelog<a class="section-anchor" href="#changelog" aria-label="Permalink">¶</a></h2> <h3>v0.1.0 — pre-release</h3> <ul> <li>Pipeline TEI → JSON funzionante per tutte le 6 edizioni del corpus (Cinna di Da Ponte, Cinna di Anelli, Il ricco d'un giorno, le tre stesure del <em>Talismano</em>).</li> <li>Vista di lettura singola con frontmatter (frontespizio, dedica, personaggi, ambientazione, testimoni) e sincronizzazione facsimile bidirezionale per le edizioni con scansioni.</li> <li>Confronto a tre vie del <em>Talismano</em> con codifica della provenienza (8 codici) e allineamento intertestuale del <em>Cinna</em> (Anelli ↔ Da Ponte).</li> <li>Convenzioni di codifica del corpus documentate (gerarchia <code>&lt;div1&gt;/&lt;div2&gt;/&lt;div3&gt;</code>, attributi <code>@met</code>/<code>@real</code>/<code>@part</code>, simultaneità <code>@synch</code>, spostamento di siglum nel testimone biblFull).</li> <li>Pagina <a href="/en/docs/health/">Salute del corpus</a>: validazione TEI con regole Schematron + controlli Python (broken refs, sigla mancanti, dichiarazioni non referenziate).</li> <li>ORCID e affiliazioni dei curatori (Pacchin, Scarponi, Malavasi, Di Nicola, Chiarini) e generazione automatica di <code>CITATION.cff</code> dal manifest.</li> <li>Ricerca a testo pieno con Pagefind. Suite di test (pytest sulla pipeline).</li> <li>Pagine Progetto e Documentazione consolidate (questa).</li> </ul> <h3>Lavori in corso (verso v1.0)</h3> <ul> <li>Indici trasversali (persone / luoghi / arie): pagine nascoste dalla navigazione finché l'indicizzatore non gestisce i riferimenti inline a <code>&lt;placeName&gt;</code> e non deduplica le forme chiuse interne agli ensemble.</li> <li>Pannello di rete dei personaggi (Cytoscape).</li> <li>Calibrazione Bertalign per gli allineamenti paraphrastic.</li> <li>Deposito DOI Zenodo per ogni edizione e per il sito.</li> <li>Edizione bilingue (Da Ponte / inglese o tedesco) sul modello del confronto attuale.</li> <li>Audit accessibilità (WCAG 2.1 AA) e prestazioni (Lighthouse).</li> </ul> </section> </div> </main> <script type="module">const s=Array.from(document.querySelectorAll(".prose-toc a[data-toc-target]")),n=s.map(t=>document.getElementById(t.dataset.tocTarget)).filter(t=>!!t);if(n.length&&"IntersectionObserver"in window){const t=new IntersectionObserver(e=>{for(const o of e){if(!o.isIntersecting)continue;const c=o.target.id;s.forEach(r=>r.classList.toggle("is-active",r.dataset.tocTarget===c))}},{rootMargin:"-20% 0px -70% 0px"});n.forEach(e=>t.observe(e))}</script>  <footer class="site-footer"> <div class="site-footer__inner"> <div class="site-footer__row primary"> <span><strong>v0.1.0</strong></span> <span class="sep">·</span> <span>last modified 2026-05-02</span> <span class="sep">·</span> <span>DOI concept <code>10.5281/zenodo.XXXXXXX</code></span> <span class="sep">·</span> <span>version <code>10.5281/zenodo.YYYYYYY</code></span> </div> <div class="site-footer__row"> <a href="#">CC BY 4.0 (text &amp; encoding)</a> <span class="sep">·</span> <a href="#">MIT (code)</a> <span class="sep">·</span> <a href="#">TEI XML on GitHub</a> <span class="sep">·</span> <a href="#">Software Heritage</a> <span class="sep">·</span> <a href="/en/cite">How to cite</a> </div> <div class="site-footer__row"> <a href="/en/docs/">Documentation</a> <span class="sep">·</span> <a href="#">Changelog</a> <span class="sep">·</span> <a href="#">Accessibility statement</a> <span class="sep">·</span> <a href="/en/docs/health">Health</a> <span class="sep">·</span> <a href="/en/imprint">Imprint</a> </div> </div> </footer> </body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en" data-base class="no-js"> <head><script>
+    document.documentElement.classList.replace("no-js", "js");
+  </script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About — Da Ponte Libretti</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/index.DIQQLEpp.css">
+<link rel="stylesheet" href="/_astro/_id_.Dh-_lvF0.css"></head> <body> <header class="site-header" role="banner"> <div class="site-header__inner"> <a href="/en/" class="site-header__brand"> <strong>Da Ponte</strong> Libretti
+</a> <nav class="site-header__nav" aria-label="Main navigation"> <a href="/en/corpus"> Corpus </a><a href="/en/compare"> Compare </a><a href="/en/visualize/network"> Visualize </a><a href="/en/progetto" aria-current="page"> Project </a><a href="/en/docs"> Documentation </a> </nav> <div class="site-header__util"> <span class="lang-toggle"> <a href="#" class data-lang="it">IT</a> <span class="sep">|</span> <a href="#" class="active" data-lang="en">EN</a> </span> <button class="search-trigger" id="search-trigger" aria-label="Search">⌕</button> <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span></button> </div> </div> <div class="search-overlay" id="search-overlay"> <div class="search-overlay__inner"> <input type="search" placeholder="Search…" id="search-input" autocomplete="off"> <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--color-muted);">
+Premi <code>⏎</code> per aprire <code>/en/search</code> </span> <button style="background: none; border: none; font-size: 1.3rem; color: var(--color-muted); cursor: pointer;" id="search-close" aria-label="Close">×</button> </div> </div> </header> <aside class="mobile-drawer" id="mobile-drawer" aria-label="Navigazione mobile"> <button class="mobile-drawer__close" id="drawer-close" aria-label="Close">×</button> <nav> <a href="/en/corpus"> Corpus </a><a href="/en/compare"> Compare </a><a href="/en/visualize/network"> Visualize </a><a href="/en/progetto" aria-current="page"> Project </a><a href="/en/docs"> Documentation </a> </nav> </aside> <script type="module">const c=document.querySelector(".site-header"),i=document.getElementById("search-trigger"),l=document.getElementById("search-close"),o=document.getElementById("search-input"),a=document.getElementById("hamburger"),m=document.getElementById("drawer-close"),d=document.getElementById("mobile-drawer");i?.addEventListener("click",e=>{e.stopPropagation(),c?.classList.toggle("search-open"),c?.classList.contains("search-open")&&setTimeout(()=>o?.focus(),50)});l?.addEventListener("click",()=>c?.classList.remove("search-open"));o?.addEventListener("keydown",e=>{if(e.key==="Enter"&&o){const s=document.documentElement.lang||"it",t=window.location.pathname.match(/^(.*?)\/(it|en)\//),n=t?t[1]:"";window.location.href=`${n}/${s}/search?q=${encodeURIComponent(o.value)}`}});a?.addEventListener("click",()=>document.body.classList.add("drawer-open"));m?.addEventListener("click",()=>document.body.classList.remove("drawer-open"));document.addEventListener("click",e=>{document.body.classList.contains("drawer-open")&&d&&a&&!d.contains(e.target)&&!a.contains(e.target)&&document.body.classList.remove("drawer-open")});document.addEventListener("keydown",e=>{e.key==="Escape"&&(c?.classList.remove("search-open"),document.body.classList.remove("drawer-open"))});document.querySelectorAll(".lang-toggle a").forEach(e=>{e.addEventListener("click",s=>{s.preventDefault();const t=e.dataset.lang;if(!t)return;const n=window.location.pathname,r=n.replace(/\/(it|en)\//,`/${t}/`);r!==n&&(window.location.href=r)})});</script>  <main class="prose-page" role="main"> <header class="prose-header"> <h1 class="prose-header__title">About</h1> <p class="prose-header__subtitle">A digital scholarly edition of selected drammi per musica from Lorenzo Da Ponte&#39;s corpus and their sources — its audience, how it is built, how to cite it.
+</p> </header> <nav class="prose-toc" aria-label="On this page"> <p class="prose-toc__heading">On this page</p> <ul> <li><a href="#chi-siamo" data-toc-target="chi-siamo">About us</a></li><li><a href="#metodo" data-toc-target="metodo">Editorial method</a></li><li><a href="#cita" data-toc-target="cita">How to cite</a></li><li><a href="#imprint" data-toc-target="imprint">Imprint</a></li> </ul> </nav> <div class="prose-body"> <section class="prose-section"> <h2 id="chi-siamo">About us<a class="section-anchor" aria-label="Permalink" href="#chi-siamo">¶</a></h2>
+<p><em>Da Ponte Libretti</em> is a digital critical edition of late
+seventeenth- and eighteenth-century Italian drammi per musica, built
+around the corpus of <strong>Lorenzo Da Ponte</strong> (1749–1838) and its
+hypotexts. The platform is a bilingual static site (Italian primary,
+English secondary) that provides for each edition a <em>reading view</em>,
+a <em>critical apparatus</em> where multiple witnesses exist, and a
+<em>multi-way comparison</em> for the lines of genetic filiation.</p>
+<p>The current corpus comprises <strong>6</strong> editions
+across <strong>4</strong> distinct texts. The project’s <em>flagship
+view</em> is the <a href="/en/compare/talismano-three-way">three-way comparison of <em>Il talismano</em></a>,
+which juxtaposes Goldoni’s 1779 version, the anonymous revision of
+the same year, and Da Ponte’s 1788 rewriting.</p> <h3>Research team</h3> <dl> <dt>Editorial supervision</dt> <dd> Alessandro Borin, supervisor — Conservatorio di Castelfranco Veneto<br>Roberta Priore, co-supervisor (<a href="https://orcid.org/0000-0003-1713-178X">ORCID 0000-0003-1713-178X</a>) — Università di Bologna </dd> <dt>Editing and encoding</dt> <dd> Alessandro Malavasi (<a href="https://orcid.org/0009-0002-4119-4326">ORCID 0009-0002-4119-4326</a>) — Università di Padova (<em>Il ricco d&#39;un giorno</em>)<br>Marta Pacchin (<a href="https://orcid.org/0009-0009-1350-6311">ORCID 0009-0009-1350-6311</a>) — Conservatorio di Castelfranco Veneto · Conservatorio di Trapani (<em>Il talismano</em>)<br>Ilaria Scarponi (<a href="https://orcid.org/0009-0005-3549-8886">ORCID 0009-0005-3549-8886</a>) — Conservatorio di Castelfranco Veneto (<em>Cinna</em>) </dd> <dt>Development</dt> <dd> Mariia Levchenko (<a href="https://orcid.org/0009-0008-2649-0729">ORCID 0009-0008-2649-0729</a>) — Università di Bologna </dd> </dl> <h3 id="the-editions">The editions<a class="section-anchor" aria-label="Permalink" href="#the-editions">¶</a></h3>
+<p>All editions are <em>critical</em> in nature (not diplomatic): they do not
+reproduce the typographic layout of the page, and they regularise
+mechanical errors and orthography according to criteria declared in
+the <code>&#x3C;teiHeader></code>. Each one has a specific editorial focus.</p>
+<dl>
+  <dt><em>Cinna</em> by Da Ponte (London 1798)</dt>
+  <dd>
+    Da Ponte's rewriting of the <em>Cinna</em> by Angelo Anelli
+    (Milan 1792, music by Bonifazio Asioli, La Scala 1793). Da
+    Ponte's libretto, set to music by Francesco Bianchi, was staged
+    at the King's Theatre in London in 1798. The interest of the
+    edition lies in foregrounding Da Ponte's <em>modus operandi</em>
+    on the model: what he keeps, what he cuts, what he reworks; the
+    side-by-side view of the two texts is designed precisely to make
+    minimal departures, partial rewritings and structural
+    interventions perceptible. Edited by Ilaria Scarponi.
+  </dd>
+  <dt><em>Il ricco d'un giorno</em> by Da Ponte (Vienna 1784)</dt>
+  <dd>
+    Dramma giocoso in three acts, music by Antonio Salieri, first
+    performed at the Burgtheater in Vienna on 6 December 1784.
+    Edition based on a single witness (Bologna, Museo Internazionale
+    e Biblioteca della Musica, Lo.02886); other states of the same
+    edition, held in European and American libraries, are listed but
+    not collated. The edition aims to make critical text, hypotexts
+    and parallel passages comparable, in support of analyses of the
+    author's <em>modus scribendi</em>. Edited by Alessandro Malavasi.
+  </dd>
+  <dt><em>Il talismano</em> (Milan 1779 / Vienna 1788)</dt>
+  <dd>
+    Three-witness edition comparing three interrelated textual
+    layers: Carlo Goldoni's original libretto (Milan 1779, music by
+    Antonio Salieri and Giacomo Rust); the <em>Mutazioni</em> of
+    the anonymous reviser (pp. 87–116 of the same witness); and
+    Lorenzo Da Ponte's rewriting (Vienna 1788, music by Antonio
+    Salieri), which incorporates both the original and the
+    revisions. The three-way comparison view is the project's
+    <em>flagship view</em>: to represent the progressive integration
+    of the revisions into the final redaction and to make the
+    genetic trajectory of the text visible. Edited by Marta Pacchin.
+  </dd>
+</dl> </section> <section class="prose-section"> <h2 id="metodo">Editorial method<a class="section-anchor" aria-label="Permalink" href="#metodo">¶</a></h2>
+<p>Every edition in the corpus is encoded in <strong>TEI P5</strong> from an
+identified printed witness described in <code>&#x3C;sourceDesc></code>. Encoding
+covers the poetic text verse by verse, stage directions, the cast
+list (<code>&#x3C;castList></code>) and — where declared — metrical annotation.</p>
+<h3 id="critical-apparatus">Critical apparatus<a class="section-anchor" aria-label="Permalink" href="#critical-apparatus">¶</a></h3>
+<p>The apparatus is not hand-coded in the TEI files: it is generated
+automatically by <strong>CollateX</strong> from the collation of the witnesses
+declared in the corpus manifest. The result is <em>standoff</em> markup in
+<code>&#x3C;app>/&#x3C;lem>/&#x3C;rdg></code> kept separate from the source texts. This makes
+it possible to regenerate the apparatus deterministically whenever
+an encoding is updated.</p>
+<h3 id="three-way-comparison">Three-way comparison<a class="section-anchor" aria-label="Permalink" href="#three-way-comparison">¶</a></h3>
+<p>For the <em>Talismano</em>, the pipeline produces an intertextual
+alignment that assigns each segment of Da Ponte’s text a
+<em>provenance code</em> (verbatim from Goldoni, modified, verbatim from
+the Anonymous reviser, paraphrase, innovation, omission…). Eight
+codes in total, marked visually by a coloured border on the spine
+column plus a textual label. The current alignment is an <em>automated
+draft</em> (<code>cert=medium</code>); an editor-curated version will replace the
+draft in a future release.</p>
+<h3 id="data-transparency">Data transparency<a class="section-anchor" aria-label="Permalink" href="#data-transparency">¶</a></h3>
+<p>Every step of the pipeline produces deterministic output. The
+source TEI files, intermediate JSON, and standoff alignment files
+are <em>all</em> committed to git, so that every editorial change is
+diffable by anyone reviewing the repository. TEI validation runs
+on every build and produces a per-file health report.</p> </section> <section class="prose-section"> <h2 id="cita">How to cite<a class="section-anchor" aria-label="Permalink" href="#cita">¶</a></h2>
+<p>The recommended citation form is generated automatically from the
+<code>CITATION.cff</code> file at the repository root, following the Citation
+File Format standard. GitHub exposes it via the <em>“Cite this
+repository”</em> button; every release deposits a permanent DOI on
+Zenodo.</p>
+<h3 id="example-bibtex">Example (BibTeX)<a class="section-anchor" aria-label="Permalink" href="#example-bibtex">¶</a></h3>
+<pre><code>@misc{DaPonteLibretti,
+title  = {Da Ponte Libretti — digital edition},
+author = {Borin, Alessandro and Levchenko, Mariia and Malavasi, Alessandro
+          and Pacchin, Marta and Priore, Roberta and Scarponi, Ilaria},
+year   = {2026},
+url    = {https://mary-lev.github.io/DaPonte/},
+note   = {DOI: 10.5281/zenodo.XXXXXXX (current version),
+          10.5281/zenodo.YYYYYYY (concept)}
+}</code></pre>
+<h3 id="example-chicago-author-date">Example (Chicago, author-date)<a class="section-anchor" aria-label="Permalink" href="#example-chicago-author-date">¶</a></h3>
+<p>Borin, Alessandro, Mariia Levchenko, Alessandro Malavasi, Marta
+Pacchin, Roberta Priore, and Ilaria Scarponi. 2026. <em>Da Ponte
+Libretti — digital edition</em>. <a href="https://mary-lev.github.io/DaPonte/">https://mary-lev.github.io/DaPonte/</a>.
+DOI: <code>10.5281/zenodo.XXXXXXX</code>.</p>
+<h3 id="citing-a-single-edition">Citing a single edition<a class="section-anchor" aria-label="Permalink" href="#citing-a-single-edition">¶</a></h3>
+<p>Each reading view exposes a unique permalink for every verse (for
+example, <code>#l_a1_s1_001</code>) and will provide an ad-hoc per-edition
+citation through the <em>“Cite”</em> dialog in the header in upcoming
+releases.</p> </section> <section class="prose-section"> <h2 id="imprint">Imprint<a class="section-anchor" aria-label="Permalink" href="#imprint">¶</a></h2>
+<h3 id="licences">Licences<a class="section-anchor" aria-label="Permalink" href="#licences">¶</a></h3>
+<div class="prose-callout">
+<p><strong>Code</strong>: <a href="https://opensource.org/licenses/MIT">MIT License</a> — file
+<code>LICENSE</code> in the repository.</p>
+<p><strong>Content</strong> (text, TEI encoding, editorial prose, design):
+<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> — file <code>LICENSE-content</code>.</p>
+<p>This separation allows reuse of the static-site infrastructure in
+other scholarly contexts while preserving attribution for the
+philological work.</p>
+</div>
+<h3 id="hosting-and-infrastructure">Hosting and infrastructure<a class="section-anchor" aria-label="Permalink" href="#hosting-and-infrastructure">¶</a></h3>
+<p>Static site generated with <a href="https://astro.build/">Astro</a>; TEI
+encoding processed with <code>lxml</code> + <code>pydantic</code>; collation via CollateX
+(pure Python); full-text search with <a href="https://pagefind.app/">Pagefind</a>;
+facsimile viewer with <a href="https://openseadragon.github.io/">OpenSeadragon</a>.
+Sources on GitHub, deployed on GitHub Pages.</p>
+<h3 id="contact">Contact<a class="section-anchor" aria-label="Permalink" href="#contact">¶</a></h3>
+<p>For editorial or technical issues, open an issue on the GitHub
+repository. For citation, attribution or collaboration requests,
+contact the editors through the University of Bologna.</p>
+<h3 id="version">Version<a class="section-anchor" aria-label="Permalink" href="#version">¶</a></h3>
+<p>Current version: <code>v0.1.0</code> — pre-release. See the changelog in the
+documentation pages for the history of changes.</p> </section> </div> </main> <script type="module">const r=Array.from(document.querySelectorAll(".prose-toc a[data-toc-target]")),c=r.map(t=>document.getElementById(t.dataset.tocTarget)?.closest("section")).filter(t=>!!t);if(c.length&&"IntersectionObserver"in window){const t=new IntersectionObserver(e=>{for(const o of e){if(!o.isIntersecting)continue;const n=o.target.querySelector("h2[id]");if(!n)continue;const i=n.id;r.forEach(s=>s.classList.toggle("is-active",s.dataset.tocTarget===i))}},{rootMargin:"-20% 0px -70% 0px"});c.forEach(e=>t.observe(e))}</script>  <footer class="site-footer"> <div class="site-footer__inner"> <div class="site-footer__row primary"> <span><strong>v0.1.0</strong></span> <span class="sep">·</span> <span>last modified 2026-05-02</span> <span class="sep">·</span> <span>DOI concept <code>10.5281/zenodo.XXXXXXX</code></span> <span class="sep">·</span> <span>version <code>10.5281/zenodo.YYYYYYY</code></span> </div> <div class="site-footer__row"> <a href="#">CC BY 4.0 (text &amp; encoding)</a> <span class="sep">·</span> <a href="#">MIT (code)</a> <span class="sep">·</span> <a href="#">TEI XML on GitHub</a> <span class="sep">·</span> <a href="#">Software Heritage</a> <span class="sep">·</span> <a href="/en/cite">How to cite</a> </div> <div class="site-footer__row"> <a href="/en/docs/">Documentation</a> <span class="sep">·</span> <a href="#">Changelog</a> <span class="sep">·</span> <a href="#">Accessibility statement</a> <span class="sep">·</span> <a href="/en/docs/health">Health</a> <span class="sep">·</span> <a href="/en/imprint">Imprint</a> </div> </div> </footer> </body></html>

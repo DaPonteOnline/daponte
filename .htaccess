@@ -1,0 +1,19 @@
+# Da Ponte Online — Apache config for the static build.
+# This site is 100% static (HTML/CSS/JS); no server runtime is required.
+
+# Serve index.html for directory URLs. Astro uses build.format = "directory",
+# so every route is <path>/index.html.
+DirectoryIndex index.html
+
+# Pagefind (client-side full-text search) ships a WebAssembly module. If .wasm
+# is served as text/plain, search silently fails. Force the correct MIME type.
+AddType application/wasm .wasm
+
+# Custom 404 page (Astro builds dist/404.html).
+# This build is mounted at the DOMAIN ROOT (BASE_PATH=/):
+ErrorDocument 404 /404.html
+#
+# If you instead mount the site in a SUB-FOLDER on Dharc, you MUST rebuild the
+# whole artifact with the matching base (see DEPLOY.md), then comment the line
+# above and use:
+# ErrorDocument 404 /YOUR_DHARC_PATH_HERE/404.html

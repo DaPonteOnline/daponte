@@ -1,0 +1,320 @@
+{
+  "alignments": [
+    {
+      "aligner": "index-pairing",
+      "headerNote": "Allineamento generato automaticamente (cert=medium). L'Anonimo Revisore è un testimone parziale per cui l'allineamento puntuale non è ancora curato.",
+      "id": "talismano-three-way",
+      "kind": "redactions",
+      "mode": "differences",
+      "participants": [
+        {
+          "edition": "talismano-daponte-1788",
+          "label": "Da Ponte 1788",
+          "role": "spine"
+        },
+        {
+          "edition": "talismano-goldoni-1779-A",
+          "label": "Goldoni 1779",
+          "role": "source"
+        },
+        {
+          "edition": "talismano-anonimo-1779",
+          "label": "Anonimo Revisore 1779",
+          "partial": true,
+          "role": "source"
+        }
+      ],
+      "subtitle": "Confronto a tre vie: Goldoni 1779 → Anonimo Revisore 1779 → Da Ponte 1788"
+    },
+    {
+      "aligner": "index-pairing",
+      "headerNote": "Bozza di allineamento paraphrastico. Le corrispondenze a livello di battuta sono indicative.",
+      "id": "cinna-intertext",
+      "kind": "intertext",
+      "mode": "similarities",
+      "participants": [
+        {
+          "edition": "cinna-daponte-L98",
+          "label": "Da Ponte 1798",
+          "role": "spine"
+        },
+        {
+          "edition": "cinna-anelli-MI92",
+          "label": "Anelli 1792",
+          "role": "source"
+        }
+      ],
+      "subtitle": "Intertesto: Cinna di Anelli ↔ Cinna di Da Ponte"
+    }
+  ],
+  "editions": [
+    {
+      "encoder": {
+        "display": "Ilaria Scarponi",
+        "id": "scarponi"
+      },
+      "id": "cinna-daponte-L98",
+      "path": "corpus/cinna_daponte/cinna.xml",
+      "siglum": "LO98",
+      "text_id": "cinna-daponte",
+      "witness_description": "London 1798, E. Jackson — London, British Library, Gb-Lbl 907.k.5.(1)"
+    },
+    {
+      "encoder": {
+        "display": "Alessandro Malavasi",
+        "id": "malavasi"
+      },
+      "id": "ricco-VI84",
+      "path": "corpus/ricco_daponte/ricco_dun_giorno.xml",
+      "siglum": "VI84",
+      "text_id": "ricco-dun-giorno",
+      "witness_description": "Vienna 1784, Kurzbeck — Bologna, Museo Internazionale e Biblioteca della Musica, Lo.02886"
+    },
+    {
+      "encoder": {
+        "display": "Marta Pacchin",
+        "id": "pacchin"
+      },
+      "facsimile_dir": "corpus/talismano_goldoni/images",
+      "id": "talismano-goldoni-1779-A",
+      "page_count": 116,
+      "path": "corpus/talismano_goldoni/goldoni-1779.xml",
+      "section": "hypotext",
+      "siglum": "M79",
+      "text_id": "talismano",
+      "witness_description": "Milano 1779, Giovan Battista Bianchi (Nuovo Teatro alla Canobiana) — Bologna, Museo Internazionale e Biblioteca della Musica, Lo.04954"
+    },
+    {
+      "coverage_note": "partial",
+      "encoder": {
+        "display": "Marta Pacchin",
+        "id": "pacchin"
+      },
+      "id": "talismano-anonimo-1779",
+      "path": "corpus/talismano_anonimo/anonimo-1779.xml",
+      "section": "hypotext",
+      "siglum": "M79R",
+      "text_id": "talismano",
+      "witness_description": "“Mutazioni” del Revisore anonimo, pp. 87–116 dello stesso testimone Lo.04954 (Bologna, Museo Internazionale e Biblioteca della Musica)"
+    },
+    {
+      "encoder": {
+        "display": "Marta Pacchin",
+        "id": "pacchin"
+      },
+      "id": "talismano-daponte-1788",
+      "path": "corpus/talismano_daponte/daponte-1788.xml",
+      "siglum": "VI88",
+      "text_id": "talismano",
+      "witness_description": "Vienna 1788, Imperiale Stamperia de' Sordi e Muti — Vienna, Österreichische Nationalbibliothek, 32542-A"
+    },
+    {
+      "encoder": {
+        "display": "Ilaria Scarponi",
+        "id": "scarponi"
+      },
+      "facsimile_dir": "corpus/cinna_anelli/images",
+      "id": "cinna-anelli-MI92",
+      "page_count": 56,
+      "path": "corpus/cinna_anelli/Cinna-Anelli.xml",
+      "section": "hypotext",
+      "siglum": "MI92",
+      "text_id": "cinna-anelli",
+      "witness_description": "Milano 1792, Giovanni Battista Bianchi — Toronto, University of Toronto, Thomas Fisher Rare Book Library, CDN-Ttfl itp pam 00028"
+    }
+  ],
+  "persons": [
+    {
+      "affiliation": "Conservatorio di Castelfranco Veneto",
+      "id": "borin",
+      "name": "Alessandro Borin",
+      "roles": [
+        "editor"
+      ]
+    },
+    {
+      "affiliation": "Università di Bologna",
+      "id": "priore",
+      "name": "Roberta Priore",
+      "orcid": "0000-0003-1713-178X",
+      "roles": [
+        "editor"
+      ]
+    },
+    {
+      "affiliation": "Università di Bologna",
+      "id": "levchenko",
+      "name": "Mariia Levchenko",
+      "orcid": "0009-0008-2649-0729",
+      "roles": [
+        "developer",
+        "editor"
+      ]
+    },
+    {
+      "affiliation": "Università di Padova",
+      "id": "malavasi",
+      "name": "Alessandro Malavasi",
+      "orcid": "0009-0002-4119-4326",
+      "roles": [
+        "editor",
+        "encoder"
+      ]
+    },
+    {
+      "affiliation": "Conservatorio di Castelfranco Veneto · Conservatorio di Trapani",
+      "id": "pacchin",
+      "name": "Marta Pacchin",
+      "orcid": "0009-0009-1350-6311",
+      "roles": [
+        "editor",
+        "encoder"
+      ]
+    },
+    {
+      "affiliation": "Conservatorio di Castelfranco Veneto",
+      "id": "scarponi",
+      "name": "Ilaria Scarponi",
+      "orcid": "0009-0005-3549-8886",
+      "roles": [
+        "editor",
+        "encoder"
+      ]
+    },
+    {
+      "id": "daponte",
+      "name": "Lorenzo Da Ponte",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "anelli",
+      "name": "Angelo Anelli",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "mauro",
+      "name": "Bartolomeo Ortensio Mauro",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "goldoni",
+      "name": "Carlo Goldoni",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "apolloni",
+      "name": "Giovanni Filippo Apolloni",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "minato",
+      "name": "Nicolò Minato",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "beregan",
+      "name": "Nicolò Beregan",
+      "roles": [
+        "author"
+      ]
+    },
+    {
+      "id": "agostini",
+      "name": "Pietro Simone Agostini",
+      "roles": [
+        "composer"
+      ]
+    },
+    {
+      "id": "stradella",
+      "name": "Alessandro Stradella",
+      "roles": [
+        "composer"
+      ]
+    },
+    {
+      "id": "cesti",
+      "name": "Antonio Cesti",
+      "roles": [
+        "composer"
+      ]
+    }
+  ],
+  "project": {
+    "github": {
+      "branch": "main",
+      "owner": "mary-lev",
+      "repo": "DaPonte"
+    }
+  },
+  "texts": [
+    {
+      "author": {
+        "display": "Lorenzo Da Ponte",
+        "id": "daponte"
+      },
+      "date": 1798,
+      "editions": [
+        "cinna-daponte-L98"
+      ],
+      "id": "cinna-daponte",
+      "primary_language": "ita",
+      "title": "Cinna"
+    },
+    {
+      "author": {
+        "display": "Angelo Anelli",
+        "id": "anelli"
+      },
+      "date": null,
+      "editions": [
+        "cinna-anelli-MI92"
+      ],
+      "id": "cinna-anelli",
+      "primary_language": "ita",
+      "title": "Cinna"
+    },
+    {
+      "author": {
+        "display": "Lorenzo Da Ponte",
+        "id": "daponte"
+      },
+      "date": 1784,
+      "editions": [
+        "ricco-VI84"
+      ],
+      "id": "ricco-dun-giorno",
+      "languages": [
+        "ita",
+        "fre",
+        "vec"
+      ],
+      "primary_language": "ita",
+      "subtitle": "Dramma giocoso in tre atti",
+      "title": "Il ricco d'un giorno"
+    },
+    {
+      "editions": [
+        "talismano-goldoni-1779-A",
+        "talismano-anonimo-1779",
+        "talismano-daponte-1788"
+      ],
+      "id": "talismano",
+      "primary_edition": "talismano-daponte-1788",
+      "primary_language": "ita",
+      "title": "Il talismano"
+    }
+  ]
+}
