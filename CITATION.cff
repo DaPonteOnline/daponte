@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this edition, please cite it as below."
+type: software
+title: "Da Ponte Online — A Digital Scholarly Edition (Web Application)"
+abstract: >-
+  The published web-app form of the Da Ponte digital scholarly edition of
+  late-17th–18th-century Italian libretti: reading views with facing
+  facsimiles, a three-way intertextual comparator for Il Talismano, a
+  character relationship network, and client-side full-text search. This
+  deposit archives the rendered, static, re-hostable site.
+keywords:
+  - digital scholarly edition
+  - TEI P5
+  - Lorenzo da Ponte
+  - Italian libretti
+  - eighteenth-century opera
+  - static site
+license: CC-BY-4.0
+authors:
+  - family-names: Borin
+    given-names: Alessandro
+    affiliation: Conservatorio di Castelfranco Veneto
+  - family-names: Levchenko
+    given-names: Mariia
+    orcid: https://orcid.org/0009-0008-2649-0729
+    affiliation: Università di Bologna
+  - family-names: Malavasi
+    given-names: Alessandro
+    orcid: https://orcid.org/0009-0002-4119-4326
+    affiliation: Università di Padova
+  - family-names: Pacchin
+    given-names: Marta
+    orcid: https://orcid.org/0009-0009-1350-6311
+    affiliation: "Conservatorio di Castelfranco Veneto · Conservatorio di Trapani"
+  - family-names: Priore
+    given-names: Roberta
+    orcid: https://orcid.org/0000-0003-1713-178X
+    affiliation: Università di Bologna
+  - family-names: Scarponi
+    given-names: Ilaria
+    orcid: https://orcid.org/0009-0005-3549-8886
+    affiliation: Conservatorio di Castelfranco Veneto
+repository-code: https://github.com/DaPonteOnline/daponte
+url: https://daponte.ficlit.unibo.it
+version: 0.1.0
+date-released: "2026-06-30"
