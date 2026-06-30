@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "Da Ponte Online — A Digital Scholarly Edition (Web Application)",
-  "description": "The published web-app form of the Da Ponte digital scholarly edition of late-17th–18th-century Italian libretti: reading views with facing facsimiles, a three-way intertextual comparator for Il Talismano, a character relationship network, and client-side full-text search. This deposit archives the rendered, static, re-hostable site (HTML/JS/CSS + IIIF facsimiles + Pagefind index). Live site: https://daponte.ficlit.unibo.it",
+  "description": "The published web-app form of the Da Ponte digital scholarly edition of late-17th–18th-century Italian libretti: reading views with facing facsimiles, a three-way intertextual comparator for Il Talismano, a character relationship network, and client-side full-text search. This deposit archives the rendered, static, re-hostable site (HTML/JS/CSS + IIIF facsimiles + Pagefind index). Live site: <a href=\"https://daponte.ficlit.unibo.it\">daponte.ficlit.unibo.it</a>. The encoded TEI source editions are archived separately at <a href=\"https://doi.org/10.5281/zenodo.21082557\">doi.org/10.5281/zenodo.21082557</a>.",
   "language": "ita",
   "license": "cc-by-4.0",
   "access_right": "open",
