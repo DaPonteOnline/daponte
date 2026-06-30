@@ -5,6 +5,12 @@
 # so every route is <path>/index.html.
 DirectoryIndex index.html
 
+# Send the bare root straight to the Italian home as a real HTTP 302, so
+# visitors never see the static "Redirecting…" interstitial (dist/index.html).
+# "^/$" matches the exact root ONLY — it cannot loop on /it/ or catch any
+# deeper path. The interstitial page stays in place as a no-.htaccess fallback.
+RedirectMatch 302 ^/$ /it/
+
 # Pagefind (client-side full-text search) ships a WebAssembly module. If .wasm
 # is served as text/plain, search silently fails. Force the correct MIME type.
 AddType application/wasm .wasm
